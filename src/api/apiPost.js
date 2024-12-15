@@ -2,9 +2,22 @@
 import axios from 'axios';
 
 const API_URL = 'https://67556a5111ce847c992a0316.mockapi.io/api/test/post';
+const API_LIMIT = 5;
 
-const getPosts = () => {
-  return axios.get(API_URL);
+// const getPosts = (page, id) => {
+//   let params = `?page=${page}&limit=${API_LIMIT}`;
+//   if (id) {
+//     params += `&id=${id}`;
+//   }
+//   return axios.get(`${API_URL}${params}`);
+// };
+
+const getPosts = (params) => {
+  params = {
+    ...params,
+    limit: API_LIMIT
+  };
+  return axios.get(API_URL, {params});
 };
 
 const postPost = (title) => {

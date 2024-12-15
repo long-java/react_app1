@@ -10,12 +10,16 @@ const NotFound = () => {
   const handleClickLoginButton = () => {
     navigate('/login')
   }
+  const handleClickTestReduxButton = () => {
+    navigate('/test-redux')
+  }
   return (
     <Stack>
       <Typography textAlign='center' variant="h5">404 Not Found</Typography>
       <Link to="/home" style={{ textAlign: 'center', display: 'block' }}>Click to redirect to home</Link>
       <Button onClick={() => handleClickLoginButton()}>Login</Button>
       <Button onClick={() => handleClickHomeButton()}>Home</Button>
+      <Button onClick={() => handleClickTestReduxButton()}>TestRedux</Button>
     </Stack>
   )
 }
